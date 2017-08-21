@@ -1,0 +1,24 @@
+<div class="container col-lg-11">
+  <div class="chatArea" [perfect-scrollbar]="config" *ngIf="!inGame">
+    <app-messageline *ngFor="let message of messages" [message]="message" class="messages">
+    </app-messageline>
+  </div>
+  <form class="bottom" (submit)="sendMessage()">
+    <input class="form-control" type="text" [(ngModel)]="message" name="message" autofocus autocomplete="off"/> 
+    <button type="submit" style="display:none;"> </button>
+  </form>
+
+  <app-lobby *ngIf="inGame">
+  </app-lobby>
+</div>
+
+
+
+<div class="col-lg-1">
+  <button type="button" class="btn btn-primary" (click)="createGame()" *ngIf="!inGame">Create Game</button>
+  <button type="button" class="btn btn-primary" (click)="quitGame()" *ngIf="inGame">Leave Game</button>
+  <app-userlist [users]="userlist">
+  </app-userlist>
+  <app-gamelist [games]="gamelist" (join)=joinGame($event)>
+  </app-gamelist>
+</div>

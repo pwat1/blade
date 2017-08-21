@@ -1,0 +1,10 @@
+.username {
+  font-weight: 700;
+  font-size: 24px;
+  overflow: hidden;
+  padding-right: 15px;
+  text-align: left;
+}
+.messageBody {
+  font-size: 24px;
+}

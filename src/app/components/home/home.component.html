@@ -1,0 +1,11 @@
+<li class="login page" *ngIf="!submitted">
+    <form class="form" (submit)="submit()">
+        <h3 class="title">What's your nickname?</h3>
+        <input class="usernameInput" type="text" maxlength="14" [(ngModel)]="username" name="username"/>
+        <h3 class="title" (click)="submit()">Submit</h3>
+        <button type="submit" style="display:none;"> </button>
+    </form>
+</li>
+
+<app-chat *ngIf="submitted" [username]="username">
+</app-chat>

@@ -1,0 +1,23 @@
+.chatArea {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  padding-left:10px;
+  padding-bottom: 60px;
+}
+
+.bottom {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+}
+
+.body {
+    background-color:white !important;
+    color:white !important;
+}
+.messages {
+  height: 100%;
+  margin: 0;
+}

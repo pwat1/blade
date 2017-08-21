@@ -1,0 +1,41 @@
+<span class="col-md-offset-4"> LETS PLAY BLADE II </span>
+
+<div class="wrapper col-md-offset-1">
+    <div class="row opponent-hand">
+        <app-card [card]="'deck'" class="col-sm-1"></app-card>
+        <ul class="container" class="col-sm-11">
+            <div *ngFor="let card of opphand" class="col-sm-1">
+                <app-card [card]="card">
+                </app-card>
+            </div>
+        </ul>
+    </div>
+    <div class="row opponent-field">
+        <ul class="container pull-left">
+            <div *ngFor="let card of oppfield" class="col-sm-1">
+                <app-card [card]="card">
+                </app-card>
+            </div>
+        </ul>
+        <span> {{oppfield | score}} </span>
+    </div>
+    <div class="row player-field">
+        <div> {{playerfield | score}} </div>
+        <ul class="container pull-right">
+            <div *ngFor="let card of playerfield" class="col-sm-1">
+                <app-card [card]="card">
+                </app-card>
+            </div>
+        </ul>
+    </div>
+    <div class="row player-hand">
+        <app-card [card]="'deck'" class="col-sm-1"></app-card>
+        <ul class="container" [dragula]='"field"' [dragulaModel]='playerhand' class="col-sm-11">
+            <div *ngFor="let card of playerhand" class="col-sm-1">
+                <app-card [card]="card">
+                </app-card>
+            </div>
+        </ul>
+    </div>
+</div>
+
